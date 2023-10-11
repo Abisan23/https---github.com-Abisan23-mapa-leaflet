@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        @import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
+        h1 {
+            text-align: center;
+        }
+
+        #map {
+            height: 550px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: #0f172b;">
+    <h1 style="color:  #50d890 ; font-family: 'Courier New', Courier, monospace;">Lugares favoritos de QualiaRouge</h1>
+    <div id="map">
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        let map = L.map('map').setView([-17.3861296, -66.1866084], 13);
+
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        L.marker([-17.3845394, -66.1599252]).addTo(map)
+            .bindPopup('Novecento <br> Restaurante favorito.')
+            .openPopup();
+
+        L.marker([-17.3358454, -66.1445688, 17]).addTo(map)
+            .bindPopup('Parque Tunarí <br> Espacio abierto favorito.')
+            .openPopup();
+
+        L.marker([-17.363700, -66.147718]).addTo(map)
+            .bindPopup('Templo IJSUD <br> Espacio favorito.')
+            .openPopup();
+
+        L.marker([-17.374223, -66.153576]).addTo(map)
+            .bindPopup('Simon I. Patiño <br> Biblioteca favorita.')
+            .openPopup();
+
+        L.marker([-18.139371, -65.760804]).addTo(map)
+            .bindPopup('Toro Toro <br>Pueblo favorito.')
+            .openPopup();
+
+        L.marker([-17.266051, -65.906523]).addTo(map)
+            .bindPopup('Laguna Corani <br>Laguna favorita.')
+            .openPopup();
+
+    </script>
+</body>
+
+</html>
